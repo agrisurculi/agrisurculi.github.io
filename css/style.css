@@ -81,6 +81,8 @@ canvas {
 
 .site-header {
   margin-top: 90px;
+  z-index:9999;
+  position: relative;
 }
 
 .site-header h1 {
@@ -100,6 +102,8 @@ canvas {
 .site-header h1 a {
   text-decoration: none;
   color: #353535;
+  text-shadow: 1px 1px #9E9E9E;
+  z-index:9999;
 }
 
 .header-wrapper {
@@ -141,6 +145,7 @@ canvas {
   text-decoration: none;
   display: block;
   color: #353535;
+  text-shadow: 1px 1px #9E9E9E;
 }
 
 .site-nav ul li.active-tab a {
@@ -159,6 +164,14 @@ footer {
   height: 120px;
   margin-top: 120px;
   text-align: right;
+  color: #353535;
+  text-shadow: 1px 1px #9E9E9E;
+}
+
+footer div{
+  width:100%;
+  text-align: center;
+  font-size:15px;
 }
 
 footer div object {
@@ -224,6 +237,7 @@ footer div object {
 .projects ul li {
   display: inline-block;
   width: 25%;
+  float: left;
 }
 
 .projects ul li.wide {
@@ -430,7 +444,8 @@ footer div object {
 }
 
 .article img {
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  margin: 0 48px;
   margin-bottom: 20px;
   max-width: 100%;
   display: block;
@@ -606,8 +621,14 @@ footer div object {
 .image-center {
   align-content: center;
   display: block;
-  padding-right: 108px;
+  /* padding-right: 108px; */
+  margin-right: 10;
   width: 60%;
+  transition: transform .2s;
+}
+
+.image-center:hover {
+  transform:scale(2.5);
 }
 
 .image-center-single-column {
@@ -618,8 +639,9 @@ footer div object {
 }
 
 #active-image {
-  position: fixed;
+  position:fixed;
   width: 530px;
+  /* top: 100px !important; */
 }
 
 .loader,
@@ -687,3 +709,12 @@ footer div object {
             height:100%;
             background-color:#000;
         }
+
+
+#landing {
+  margin:auto;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
