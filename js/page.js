@@ -17,13 +17,13 @@ var lastScrollTop;
 var ticking = false;
 
 $(document).ready(function() {
-  sectionOffset = $('.image-column').eq(0).offset().top - $('.content').eq(0).offset().top;
-  updateImageMaxHeight();
+  // sectionOffset = $('.image-column').eq(0).offset().top - $('.content').eq(0).offset().top;
+  // updateImageMaxHeight();
 
   $(window).scroll(function() { 
     lastScrollTop = window.scrollY;
     switchActive();
-    updateActiveElem();
+    // updateActiveElem();
 
     // requestTick();
 
@@ -88,7 +88,7 @@ function anchorImage(elem, idx, verticalCenter) {
     top += verticalAlignmentAdjustment;
   }
   imageOffsets[idx].top = top;
-  elem.css('top', top);
+  // elem.css('top', top);
   elem.css('opacity', 1);
 }
 
@@ -138,7 +138,7 @@ function makeActive(nextIdx) {
   // we update its right and top only once
   if (nextIdx != -1) {
     imagesDoms[nextIdx].attr('id', 'active-image');
-    imagesDoms[nextIdx].css('top', globalSnapTop);
+    // imagesDoms[nextIdx].css('top', globalSnapTop);
     imagesDoms[nextIdx].css('right', globalSnapRight);
   }
 
@@ -149,13 +149,13 @@ function updateActiveElem() {
   if (currentActiveIdx != -1) {
     // handle negative scroll
     if (lastScrollTop < 0)
-      $('#active-image').css('top', globalSnapTop - lastScrollTop);
+      // $('#active-image').css('top', globalSnapTop - lastScrollTop);
 
     if (currentActiveIdx != -1 && currentActiveIdx < imageOffsets.length - 1) {
       var nextTopPos = imageOffsets[currentActiveIdx + 1].top + sectionOffset;
       var currBottomPos = lastScrollTop + imageOffsets[currentActiveIdx].height - globalSnapAdjustment;
       var distance = nextTopPos - currBottomPos;
-      $('#active-image').css('opacity', distance < 20 ? 0 : 1);
+      // $('#active-image').css('opacity', distance < 20 ? 0 : 1);
     }
   }
 }
@@ -164,7 +164,7 @@ function perFrameUpdate() {
   requestAnimationFrame(perFrameUpdate);
 
   switchActive();
-  updateActiveElem();
+  // updateActiveElem();
 }
 
 function requestTick() {
