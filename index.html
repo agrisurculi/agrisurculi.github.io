@@ -5,7 +5,6 @@
   <link rel='stylesheet' href="/css/style.css" type='text/css' />
   <link rel="shortcut icon" type="image/png" href="/img/favicon.png">
   <script src="/js/jquery-3.2.1.min.js" type="text/javascript"></script>
-
 </head>
 
 <body>
@@ -27,7 +26,13 @@
       </div>
     </div>
   </header>
-  
+  <footer>
+    <div>
+        &#160↑
+    </br>←  drag  →
+    </br>↓
+    </div>
+  </footer>
     <script src="/js/three.js"></script>
     <script src="/js/controls/OrbitControls.js"></script>
     <script src="/js/objects/Water.js"></script>
@@ -37,7 +42,7 @@
     <script src="/js/loaders/FBXLoader.js"></script>
 
     <script type="text/javascript">
-      $('body').append('<div style="" id="loadingDiv"><div class="loader">Loading...</div></div>');
+      $('body').append('<div style="" id="loadingDiv"><div class="loader">Loading...</div><h1 id="landing">retrieving your time zone...</h1></div>');
       $(window).on('load', function(){
         setTimeout(removeLoader, 2000); //wait for page load PLUS two seconds.
       });
@@ -105,9 +110,24 @@
         uniforms.mieDirectionalG.value = 0.8;
         
         var incfloat;
+        
+        /*
+         * get local time zone
+         * map [0,24] hours to [0,1]
+         */ 
+        const now = new Date();
+        let h = now.getHours();
+        let inclination_h
+        if(h<12){
+          inclination_h = 1 - h/12;
+        }else{
+          inclination_h = (h-12)/12;
+        }
+                
+        
         var parameters = {
           distance: 400,
-          inclination: 0.2,
+          inclination: inclination_h,
           azimuth: 0.2
         };
 
