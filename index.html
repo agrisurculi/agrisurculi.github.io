@@ -42,7 +42,7 @@
     <script src="/js/loaders/FBXLoader.js"></script>
 
     <script type="text/javascript">
-      $('body').append('<div style="" id="loadingDiv"><div class="loader">Loading...</div><h1 id="landing">retrieving your time zone...</h1></div>');
+      $('body').append('<div style="" id="loadingDiv"><div class="loader">Loading...</div><h4 id="landing">retrieving your local time...</h4></div>');
       $(window).on('load', function(){
         setTimeout(removeLoader, 2000); //wait for page load PLUS two seconds.
       });
