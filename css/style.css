@@ -115,8 +115,8 @@ canvas {
 }
 
 .site-title {
-  width: 75%;
-  position: fixed;
+  /* width: 75%; */
+  /* position: fixed; */
 }
 
 .site-project-titl-narrow {
@@ -129,10 +129,10 @@ canvas {
 
 .site-nav {
   margin-top: -16px;
-/*   right:90px; */
-/*   float:right; */
-  position:fixed;
-  width:75%;
+  right:90px;
+  float:right;
+  /* position:fixed; */
+  /* width:75%; */
 }
 
 .site-nav ul {
@@ -414,6 +414,15 @@ footer div object {
   color: #276dc1;
 }
 
+
+.site-title h2{
+  position:fixed;
+}
+
+.site-title h6{
+  position:fixed;
+  margin-top:30px;
+}
 /*
  * Body layout
  */
@@ -430,6 +439,9 @@ footer div object {
 
 .article-column {
   width: 530px;
+  padding: 0 9vw;
+  position: relative;
+  float:right;
 }
 
 /*
@@ -449,15 +461,15 @@ footer div object {
   font-size: 15px;
   line-height: 1.7em;
   margin: 0 auto;
-  margin-right: 108px;
+/*   margin-right: 108px; */
   margin-bottom: 5px;
   color: #4c4c4c;
   text-align: center;
 }
 
 .article img {
-  /* margin: 0 auto; */
-  margin: 0 48px;
+  margin: 0 auto;
+  /* margin: 0 48px; */
   margin-bottom: 20px;
   max-width: 100%;
   display: block;
@@ -578,6 +590,7 @@ footer div object {
 
 .image-display {
   position: fixed;
+  top:130px;
 /*   right: 0; */
   opacity: 0;
   width: 530px;
@@ -646,7 +659,7 @@ footer div object {
 .image-center-single-column {
   align-content: center;
   display: block;
-  padding-right: 108px;
+  /* padding-right: 108px; */
   width: 30%;
 }
 
@@ -730,3 +743,6 @@ footer div object {
   text-align: center;
 }
 
+.fixed-postion {
+  position:fixed;
+}
