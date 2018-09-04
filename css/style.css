@@ -49,10 +49,12 @@ html, body, div, p, img, h1, h2, h3, h4, h5, h6 {
 }
 
 img{
-    cursor: -moz-zoom-in; 
-    cursor: -webkit-zoom-in; 
+    cursor: -moz-zoom-in;
+    cursor: -webkit-zoom-in;
     cursor: zoom-in;
 }
+
+
 
 canvas {
   width: 100vw;
@@ -83,6 +85,7 @@ canvas {
   margin-top: 90px;
   z-index:9999;
   position: relative;
+  width:100%;
 }
 
 .site-header h1 {
@@ -113,6 +116,7 @@ canvas {
 
 .site-title {
   width: 75%;
+  position: fixed;
 }
 
 .site-project-titl-narrow {
@@ -125,6 +129,10 @@ canvas {
 
 .site-nav {
   margin-top: -16px;
+/*   right:90px; */
+/*   float:right; */
+  position:fixed;
+  width:75%;
 }
 
 .site-nav ul {
@@ -136,7 +144,7 @@ canvas {
   display: block;
   list-style: none;
   padding: 4px 8px;
-  text-align: center;
+  text-align: right;
 }
 
 .site-nav ul li a {
@@ -189,7 +197,7 @@ footer div object {
  */
 
 .content {
-  margin-top: 40px;
+  margin-top: 130px;
   margin-bottom: 100px;
 }
 
@@ -267,10 +275,13 @@ footer div object {
   bottom: 0;
   width: 100%;
   margin: auto;
+  cursor:default;
 }
 
 .projects .project-block img.grayed {
   transition: filter .35s ease-in-out;
+  transition: transform .2s;
+
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
 }
@@ -278,6 +289,7 @@ footer div object {
 .projects .project-block:hover img.grayed {
   -webkit-filter: grayscale(0%);
   filter: grayscale(0%);
+  transform:scale(1.1);
 }
 
 .projects .project-title {
@@ -565,10 +577,10 @@ footer div object {
  */
 
 .image-display {
-  position: absolute;
-  right: 0;
+  position: fixed;
+/*   right: 0; */
   opacity: 0;
-  width: 100%;
+  width: 530px;
   transition: opacity 0.15s;
   -webkit-transition: opacity 0.15s;
 }
