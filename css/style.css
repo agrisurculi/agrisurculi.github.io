@@ -662,6 +662,10 @@ footer div object {
   width: 30%;
 }
 
+.image-center-single-column:hover {
+  transform:scale(2.5);
+}
+
 #active-image {
   position:fixed;
   width: 530px;
