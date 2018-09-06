@@ -456,6 +456,16 @@ footer div object {
   width: 800px;
 }
 
+.article h3 {
+  font-family: SulphurPoint-Light, "Source Sans Pro Light";
+  line-height: 1.7em;
+  margin: 0 auto;
+/*   margin-right: 108px; */
+  margin-bottom: 5px;
+  color: #4c4c4c;
+  text-align: center;
+}
+
 .article p {
   font-family: SulphurPoint-Light, "Source Sans Pro Light";
   font-size: 15px;
