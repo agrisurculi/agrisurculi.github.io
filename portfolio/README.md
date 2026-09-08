@@ -18,7 +18,7 @@ Fonts, thumbnails, and the portrait are stored locally. Individual case studies 
 
 ## Publishing
 
-`.github/workflows/pages.yml` builds and verifies pull requests targeting `main`. After merge, it deploys `portfolio/dist/` as one GitHub Pages artifact containing the portfolio and archive. In repository Settings → Pages, select **GitHub Actions** as the publishing source. Only `main` can deploy; the workflow can also be dispatched manually from `main`.
+`.github/workflows/pages.yml` builds and verifies pull requests targeting `master`. After merge, it deploys `portfolio/dist/` as one GitHub Pages artifact containing the portfolio and archive. In repository Settings → Pages, select **GitHub Actions** as the publishing source. Only `master` can deploy; the workflow can also be dispatched manually from `master`.
 
 The configured site is https://agrisurculi.github.io. Domain and DNS changes are not included. Change the Astro site setting only when the custom-domain migration is ready.
 
@@ -28,4 +28,4 @@ The configured site is https://agrisurculi.github.io. Domain and DNS changes are
 
 One pre-existing missing video remains: `projects/human-territory/openVideos.mov`. The source repository does not contain it. Restore the original file when available.
 
-To roll back a release, revert its merge through a pull request; the next successful main build deploys the reverted source. The original site's pre-migration revision is retained in Git history.
+To roll back a release, revert its merge through a pull request; the next successful master build deploys the reverted source. The original site's pre-migration revision is retained in Git history.
