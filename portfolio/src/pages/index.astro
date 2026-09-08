@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+const projects = [
+ {title:'Autodesk Workshop XR Cross Platform UX',description:'Designs cutting-edge mixed reality experiences for Autodesk’s AEC clients, transforming complex spatial design to construction process into intuitive, production-ready immersive tools.',role:'Product Designer',year:'2024',image:'autodesk.png',alt:'Autodesk Workshop XR collaborative model review',href:'mailto:tmiao.wh@gmail.com?subject=Autodesk%20Workshop%20XR%20case%20study',label:'Contact for case study'},
+ {title:'HoloLens Multi-user Interface',description:'Designs scalable multiplayer interaction systems for Microsoft HoloLens, solving spatial awareness, latency, and privacy challenges to deliver immersive, high-performance mixed reality collaboration experiences.',role:'Product Designer',year:'2022',image:'hololens.jpg',alt:'Microsoft mixed reality collaboration',href:'https://www.miaotian.space/tech/hololens-multi-user-interaction',label:'View case study'},
+ {title:'HoloKit',description:'Led product design for HoloKit 1.0, creating an affordable mixed reality headset and mobile ecosystem that lowered the barrier to MR development through open-source tracking and smartphone-powered hardware.',role:'Product Designer & Manager',year:'2018',image:'holokit.jpg',alt:'HoloKit mixed reality headset',href:'https://www.miaotian.space/tech/holokit-affordable-mr',label:'View case study'}
+];
+---
+<Layout>
+  <Header active="home" />
+  <main id="main">
+    <section class="intro" aria-labelledby="name">
+      <div class="intro-byline"><h1 id="name">MIAO TIAN</h1><h2>Product Designer</h2></div>
+      <p class="display">I design cross platform interface, AI solutions, spatial computing experience <span class="secondary">that meet user needs and drive business growth.</span></p>
+    </section>
+    <div class="projects">
+      {projects.map(project => <article class="project">
+        <div class="project-copy"><h2>{project.title}</h2><p>{project.description}</p><div class="metadata"><p class="role">{project.role}</p><ul><li>Core expertise</li><li>Tools &amp; deliverables</li><li>Research &amp; strategy</li><li>Collaboration &amp; leadership</li></ul></div><div class="project-bottom"><a class="button" href={project.href}>{project.label}</a><span>{project.year}</span></div></div>
+        <img class="project-image" src={'/assets/'+project.image} alt={project.alt} loading="lazy" />
+      </article>)}
+    </div>
+  </main>
+  <Footer />
+</Layout>

@@ -1,0 +1,44 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import projects from '../data/work.json';
+import '../styles/inner.css';
+const disciplines = ['All work','Strategy','UX & Interaction','Spatial Computing & XR','Architecture','Industrial','Branding'];
+---
+<Layout title="Work — Miao Tian">
+  <Header active="work" />
+  <main id="main" class="work-page">
+    <section class="work-heading" aria-label="Filter work">
+      <h1 id="selected-discipline">All work</h1>
+      <div class="discipline-control"><h2 id="discipline-label">Discipline</h2><div class="discipline-options" role="group" aria-labelledby="discipline-label">
+        {disciplines.map((label,i) => <button type="button" data-filter={label} aria-pressed={i===0} aria-controls="work-grid">{label}</button>)}
+      </div></div>
+    </section>
+    <p class="visually-hidden" id="filter-status" role="status" aria-live="polite">18 projects</p>
+    <section id="work-grid" class="work-grid" aria-label="Projects">
+      {projects.map(project => <article class="work-card" data-disciplines={JSON.stringify(project.disciplines)}>
+        <a class="work-card-link" href={project.href}><img src={project.image} alt={project.title} width="750" height="850" loading="lazy" /><h2>{project.title}</h2></a>
+        <ul class="work-card-disciplines" aria-label="Disciplines">{project.disciplines.map(label=><li>{label}</li>)}</ul>
+      </article>)}
+    </section>
+  </main>
+  <Footer />
+</Layout>
+<script>
+ const buttons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-filter]'));
+ const cards = Array.from(document.querySelectorAll<HTMLElement>('.work-card'));
+ const heading = document.getElementById('selected-discipline');
+ const status = document.getElementById('filter-status');
+ function selectFilter(label: string) {
+   let count = 0;
+   for (const button of buttons) button.setAttribute('aria-pressed', String(button.dataset.filter === label));
+   for (const card of cards) {
+     card.hidden = label !== 'All work' && !JSON.parse(card.dataset.disciplines || '[]').includes(label);
+     if (!card.hidden) count++;
+   }
+   if (heading) heading.textContent = label;
+   if (status) status.textContent = `${count} ${count === 1 ? 'project' : 'projects'} — ${label}`;
+ }
+ for (const button of buttons) button.addEventListener('click', () => selectFilter(button.dataset.filter || 'All work'));
+</script>

@@ -1,0 +1,17 @@
+---
+import '@fontsource/manrope/500.css';
+import '@fontsource/manrope/600.css';
+import '@fontsource/manrope/700.css';
+import '../styles/global.css';
+const { title = 'Miao Tian — Product Designer' } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Miao Tian designs cross platform interfaces, AI solutions, and spatial computing experiences." />
+    <title>{title}</title>
+  </head>
+  <body><a class="skip" href="#main">Skip to content</a><slot /></body>
+</html>

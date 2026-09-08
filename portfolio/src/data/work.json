@@ -1,0 +1,156 @@
+[
+  {
+    "title": "Workshop XR",
+    "href": "https://workshopxr.autodesk.com",
+    "image": "/assets/work/project-01.png",
+    "disciplines": [
+      "Strategy",
+      "UX & Interaction",
+      "Spatial Computing & XR"
+    ]
+  },
+  {
+    "title": "HoloKit X",
+    "href": "https://holokit.io",
+    "image": "/assets/work/project-02.jpg",
+    "disciplines": [
+      "Spatial Computing & XR",
+      "Industrial"
+    ]
+  },
+  {
+    "title": "Microsoft Mesh Event",
+    "href": "https://www.miaotian.space/tech/microsoft-mesh",
+    "image": "/assets/work/project-03.jpg",
+    "disciplines": [
+      "UX & Interaction",
+      "Spatial Computing & XR"
+    ]
+  },
+  {
+    "title": "HoloLens Multi-user Interface",
+    "href": "https://www.miaotian.space/tech/hololens-multi-user-interaction",
+    "image": "/assets/work/project-04.jpg",
+    "disciplines": [
+      "UX & Interaction",
+      "Spatial Computing & XR"
+    ]
+  },
+  {
+    "title": "HoloKit 1.0",
+    "href": "https://www.miaotian.space/tech/holokit-affordable-mr",
+    "image": "/assets/work/project-05.png",
+    "disciplines": [
+      "UX & Interaction",
+      "Spatial Computing & XR",
+      "Industrial"
+    ]
+  },
+  {
+    "title": "BAM Creative Rebranding",
+    "href": "https://www.miaotian.space/tech/bam-creative-responsive-website",
+    "image": "/assets/work/project-06.png",
+    "disciplines": [
+      "Branding",
+      "UX & Interaction"
+    ]
+  },
+  {
+    "title": "City of Sparkles | Stargazer",
+    "href": "https://www.miaotian.space/tech/urban-particle-vr",
+    "image": "/assets/work/project-07.jpg",
+    "disciplines": [
+      "UX & Interaction",
+      "Spatial Computing & XR"
+    ]
+  },
+  {
+    "title": "Defying Gravity",
+    "href": "https://www.miaotian.space/tech/defy-gravity",
+    "image": "/assets/work/project-08.jpg",
+    "disciplines": [
+      "UX & Interaction",
+      "Spatial Computing & XR"
+    ]
+  },
+  {
+    "title": "Unmoored",
+    "href": "https://www.miaotian.space/tech/unmoored",
+    "image": "/assets/work/project-09.jpg",
+    "disciplines": [
+      "Spatial Computing & XR"
+    ]
+  },
+  {
+    "title": "Weill Cornell Wellness Center LIC",
+    "href": "https://www.miaotian.space/architecture/weill-cornell-medicine-wellness-center",
+    "image": "/assets/work/project-10.jpg",
+    "disciplines": [
+      "Architecture"
+    ]
+  },
+  {
+    "title": "Ritz Carlton Nomad",
+    "href": "https://www.miaotian.space/architecture/ritz-carlton-nomad",
+    "image": "/assets/work/project-11.jpg",
+    "disciplines": [
+      "Architecture"
+    ]
+  },
+  {
+    "title": "BGO Fashion Headquarter",
+    "href": "https://www.miaotian.space/architecture/bgo-fashion-headquater",
+    "image": "/assets/work/project-12.jpg",
+    "disciplines": [
+      "Architecture"
+    ]
+  },
+  {
+    "title": "Scor Reinsurance NYC Office",
+    "href": "https://www.miaotian.space/architecture/scor-reinsurance-nyc-office",
+    "image": "/assets/work/project-13.jpg",
+    "disciplines": [
+      "Architecture"
+    ]
+  },
+  {
+    "title": "Ordos Unveil",
+    "href": "https://www.miaotian.space/architecture/ordos-unveil",
+    "image": "/assets/work/project-14.jpg",
+    "disciplines": [
+      "Architecture"
+    ]
+  },
+  {
+    "title": "Regeneron Pharmaceuticals SHO",
+    "href": "https://www.miaotian.space/architecture/regeneron-pharmaceuticals-sho",
+    "image": "/assets/work/project-15.jpg",
+    "disciplines": [
+      "Architecture"
+    ]
+  },
+  {
+    "title": "Ramping Library",
+    "href": "https://www.miaotian.space/architecture/rampinglibrary",
+    "image": "/assets/work/project-16.jpg",
+    "disciplines": [
+      "Architecture"
+    ]
+  },
+  {
+    "title": "Wuhaus",
+    "href": "https://www.miaotian.space/architecture/project-four-rkhtf",
+    "image": "/assets/work/project-17.jpg",
+    "disciplines": [
+      "Architecture"
+    ]
+  },
+  {
+    "title": "To Scale",
+    "href": "https://www.miaotian.space/architecture/to-scale",
+    "image": "/assets/work/project-18.jpg",
+    "disciplines": [
+      "Architecture"
+    ]
+  }
+]
