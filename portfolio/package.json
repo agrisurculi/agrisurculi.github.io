@@ -1,0 +1,17 @@
+{
+  "name": "miao-tian-portfolio",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/archive.mjs && astro dev --host 127.0.0.1",
+    "build": "node scripts/archive.mjs && astro build",
+    "preview": "astro preview --host 127.0.0.1",
+    "archive": "node scripts/archive.mjs"
+  },
+  "dependencies": {
+    "astro": "^5.13.0",
+    "@fontsource/manrope": "^5.2.6",
+    "@fontsource/poppins": "^5.2.6"
+  }
+}

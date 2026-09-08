@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import bio from '../data/bio.json';
+import '../styles/inner.css';
+---
+<Layout title="Me — Miao Tian">
+  <Header active="me" />
+  <main id="main" class="me-page">
+    <h1 class="me-introduction">{bio[0]}</h1>
+    <section class="me-content" aria-label="About Miao Tian">
+      <img class="me-portrait" src="/assets/work/portrait.jpg" alt="Miao Tian" width="800" height="1000" />
+      <div class="me-biography">{bio.slice(1).map(paragraph=><p>{paragraph}</p>)}</div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

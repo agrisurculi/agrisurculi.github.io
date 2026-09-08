@@ -1,0 +1,7 @@
+---
+const { active = "home" } = Astro.props;
+---
+  <header class="site-header">
+    <a class="home-link" href="/" aria-label="Miao Tian home" aria-current={active === "home" ? "page" : undefined}><img class="logo" src="/assets/logo.png" width="50" height="50" alt="Miao Tian" /></a>
+    <nav aria-label="Main navigation"><a href="/work/" aria-current={active === "work" ? "page" : undefined}>Work</a><a href="/me/" aria-current={active === "me" ? "page" : undefined}>Me</a><a href="/archive/">Archive</a></nav>
+  </header>
