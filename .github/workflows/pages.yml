@@ -1,0 +1,50 @@
+name: Portfolio and archive
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Install pnpm
+        run: npm install --global pnpm@11.19.0
+      - name: Install dependencies
+        working-directory: portfolio
+        run: pnpm install --frozen-lockfile
+      - name: Build portfolio and archive
+        working-directory: portfolio
+        run: pnpm build
+      - name: Verify published files
+        working-directory: portfolio
+        run: node scripts/verify-deployment.mjs
+      - name: Upload site
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: portfolio/dist
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,41 +1,31 @@
-# Astro portfolio development
+# Miao Tian portfolio
 
-This folder is an isolated start for rebuilding miaotian.space. The original website at the repository root is unchanged. This is a development scaffold, not the finished portfolio.
+Astro static portfolio with Home, Work (18 projects and discipline filtering), and Me pages. The original website source remains at the repository root; builds generate a separately linked archive at `/archive/`.
 
-## Local development
+## Development
 
-Use Node.js 24 and pnpm. From this directory:
+Use Node.js 24 and pnpm 11.19.0. Inside `portfolio/`:
 
 ```sh
-pnpm install
+pnpm install --frozen-lockfile
 pnpm dev
 pnpm build
+node scripts/verify-deployment.mjs
 pnpm preview
 ```
 
-The development server prints its local address. Astro produces static files in `dist/`. Fonts are bundled locally.
+Fonts, thumbnails, and the portrait are stored locally. Individual case studies currently link to their existing external destinations. Keep Squarespace available until those pages are migrated.
 
-## Migration findings
+## Publishing
 
-- Original site: plain HTML, CSS, jQuery, and Three.js; local fonts, textures, and FBX models.
-- Baseline commit: cfce554. Keep it available as a recovery point.
-- The original site has root-relative paths in HTML, CSS, and scene loaders. An archive needs path rewriting and verification, not a simple folder move.
-- No deployment workflow or CNAME is checked in. Live Pages settings still need verification in GitHub.
+`.github/workflows/pages.yml` builds and verifies pull requests targeting `main`. After merge, it deploys `portfolio/dist/` as one GitHub Pages artifact containing the portfolio and archive. In repository Settings → Pages, select **GitHub Actions** as the publishing source. Only `main` can deploy; the workflow can also be dispatched manually from `main`.
 
-## Proposed publication structure
+The configured site is https://agrisurculi.github.io. Domain and DNS changes are not included. Change the Astro site setting only when the custom-domain migration is ready.
 
-Build the new Astro site at `/`, and copy the preserved old site into the final artifact at `/archive/`, updating its internal paths. Add an Archive website link once that destination works. Preserve the existing tracked source until the archive is verified.
+## Archive
 
-The eventual GitHub Actions workflow should install using the lockfile, build this folder, assemble the archive, and upload the combined static output to Pages. Do not enable deployment until the archive and new portfolio are reviewed. No deployment or Pages-setting changes are included in this scaffold.
+`scripts/archive.mjs` copies the original tracked website files to the ignored `public/archive/` folder. It adjusts known root-relative paths, normalizes directory links, and restores the original commented-out homepage header. It does not modify original source files. Baseline commit `cfce554` preserves the old site.
 
-The Astro `site` setting currently targets https://agrisurculi.github.io. Update it and add a CNAME only when the custom domain migration is ready. No `base` prefix is needed for the user-site root.
+One pre-existing missing video remains: `projects/human-territory/openVideos.mov`. The source repository does not contain it. Restore the original file when available.
 
-## Homepage and archive preview
-
-The homepage now includes the original three project summaries and local imagery. Work Index, Me, HoloLens, and HoloKit currently link to Squarespace pending case-study migration. The broken Autodesk source URL is replaced with a contact link. Tag text contrast is increased for readability.
-
-`pnpm dev` and `pnpm build` generate `public/archive/` from the tracked original site without modifying its source. The generated copy is ignored by Git and included in Astro output. Known root-relative HTML, CSS, and JavaScript paths are prefixed with `/archive/`. The original site’s runtime and pre-existing broken links require browser review before publication.
-
-### Verification notes
-
-The production build succeeds with 434 archived files. Static HTML link checking found one pre-existing missing file: `projects/human-territory/openVideos.mov`. It is absent from the original repository and has not been invented or removed from the archive. Restore the original video if available. The interactive Three.js scene still requires visual/browser verification before publication.
+To roll back a release, revert its merge through a pull request; the next successful main build deploys the reverted source. The original site's pre-migration revision is retained in Git history.
