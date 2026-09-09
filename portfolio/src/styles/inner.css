@@ -1,6 +1,6 @@
 
 .site-header nav a[aria-current="page"] { padding: 8px 12px; margin: -8px -12px; }
-.work-page, .me-page { padding: 0 var(--gutter); }
+.work-page { padding: 0 var(--gutter); }
 .work-heading { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; padding: 110px 0 100px; }
 .work-heading h1 { font-size: clamp(2rem, 3.2vw, 3.5rem); max-width: 90%; }
 .discipline-control { display: flex; justify-content: flex-end; gap: 24px; }
@@ -18,12 +18,22 @@
 .work-card h2 { font-size: 1rem; font-weight: 700; line-height: 1.18; margin: 16px 0 12px; }
 .work-card-link:hover h2 { text-decoration: underline; }
 .work-card-disciplines { display: flex; flex-wrap: wrap; gap: 4px 14px; padding: 0; margin: 0; list-style: none; font-size: 0.875rem; font-weight: 600; color: #737370; line-height: 1.18; }
-.me-page { padding-top: 100px; padding-bottom: 80px; }
-.me-introduction { max-width: 1200px; font-size: clamp(2rem, 4.5vw, 4.75rem); margin-bottom: 80px; }
-.me-content { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 8%; align-items: start; }
-.me-portrait { display: block; width: 100%; height: auto; border-radius: 5px; }
-.me-biography { font-size: clamp(1rem, 1.6vw, 1.375rem); line-height: 1.5; }
-.me-biography p + p { margin-top: 30px; }
+.me-page { padding: 0; }
+.me-hero { min-height: calc(78svh - 96px); padding: 64px var(--gutter) 40px; display: flex; flex-direction: column; justify-content: space-between; gap: 40px; }
+.me-introduction { max-width: 1600px; font-size: clamp(2.75rem, 6.5vw, 7.375rem); line-height: .94; letter-spacing: -.045em; }
+.me-introduction span { color: #9c9c99; }
+.me-metadata { align-self: flex-end; text-align: right; font-size: 12px; font-weight: 600; line-height: 1.15; text-transform: uppercase; }
+.me-about, .me-information, .me-elsewhere { padding: 64px var(--gutter) 80px; }
+.me-about { background: #000; color: #f4f4f2; }
+.me-label { font-size: 12px; font-weight: 600; line-height: 1.15; letter-spacing: 0; text-transform: uppercase; margin-bottom: 40px; }
+.me-columns { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8%; }
+.me-columns > p, .me-exploration p { font-size: clamp(1.375rem, 2vw, 2rem); font-weight: 500; line-height: 1.18; letter-spacing: -.02em; }
+.me-facts { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 32px; margin: 0; padding-top: 24px; border-top: 1px solid #9c9c99; }
+.me-facts dt { font-size: 12px; font-weight: 600; text-transform: uppercase; margin-bottom: 16px; }
+.me-facts dd { margin: 0; font-size: clamp(1rem,1.6vw,1.5rem); line-height: 1.18; font-weight: 600; color: #737370; }
+.me-elsewhere { border-top: 1px solid #9c9c99; }
+.me-exploration h3 { margin: 0 0 24px; font-size: clamp(2rem,4vw,4rem); line-height: 1.02; letter-spacing: -.028em; }
+.me-exploration p { color: #737370; }
 .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
 @media(max-width:1000px) { .work-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
 @media(max-width:700px) {
@@ -31,7 +41,8 @@
  .discipline-control { justify-content: flex-start; }
  .discipline-options button { min-height: 32px; }
  .work-grid { grid-template-columns: 1fr; row-gap: 54px; padding-bottom: 36px; }
- .me-page { padding-top: 60px; padding-bottom: 36px; }
- .me-introduction { margin-bottom: 54px; }
- .me-content { grid-template-columns: 1fr; gap: 36px; }
+ .me-hero { min-height: auto; padding-top: 48px; gap: 36px; }
+ .me-about, .me-information, .me-elsewhere { padding: 40px var(--gutter) 54px; }
+ .me-columns { grid-template-columns: 1fr; gap: 36px; }
+ .me-facts { grid-template-columns: repeat(2,minmax(0,1fr)); }
 }
