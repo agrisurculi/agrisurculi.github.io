@@ -8,10 +8,29 @@ import '../styles/inner.css';
 <Layout title="Me — Miao Tian">
   <Header active="me" />
   <main id="main" class="me-page">
-    <h1 class="me-introduction">{bio[0]}</h1>
-    <section class="me-content" aria-label="About Miao Tian">
-      <img class="me-portrait" src="/assets/work/portrait.jpg" alt="Miao Tian" width="800" height="1000" />
-      <div class="me-biography">{bio.slice(1).map(paragraph=><p>{paragraph}</p>)}</div>
+    <section class="me-hero" aria-labelledby="me-title">
+      <h1 id="me-title" class="me-introduction">I’m a Principal Designer working at the intersection of <span>product strategy, design, and technology.</span></h1>
+      <div class="me-metadata"><p>Seattle</p><p>XR / AI</p><p>Digital experiences</p></div>
+    </section>
+    <section class="me-about" aria-labelledby="about-title">
+      <h2 id="about-title" class="me-label">About</h2>
+      <div class="me-columns">{bio.professional.map(paragraph => <p>{paragraph}</p>)}</div>
+    </section>
+    <section class="me-information" aria-labelledby="information-title">
+      <h2 id="information-title" class="me-label">Information</h2>
+      <dl class="me-facts">
+        <div><dt>Role</dt><dd>Principal Designer</dd></div>
+        <div><dt>Focus</dt><dd>Product strategy<br />Experience direction<br />Emerging technology<br />Complex systems</dd></div>
+        <div><dt>Mediums</dt><dd>Web<br />Mobile<br />XR<br />Interactive installation</dd></div>
+        <div><dt>Location</dt><dd>Seattle, WA</dd></div>
+      </dl>
+    </section>
+    <section class="me-elsewhere" aria-labelledby="elsewhere-title">
+      <h2 id="elsewhere-title" class="me-label">Me, elsewhere</h2>
+      <div class="me-columns">
+        <p>{bio.personal}</p>
+        <div class="me-exploration"><h3>Game environment design.</h3><p>{bio.exploration}</p></div>
+      </div>
     </section>
   </main>
   <Footer />
